@@ -27,8 +27,9 @@ export default function MobileHome() {
 
       {/* Content */}
       <div className="relative z-10 flex justify-center">
-        {/* Hero Section */}
-        <Section noPadding className="min-h-screen flex items-start justify-center">
+        <div className="origin-top scale-[0.85] w-full">
+          {/* Hero Section */}
+          <Section noPadding className="min-h-screen flex items-start justify-center">
             <div className="max-w-[1600px] mx-auto w-full px-4 pt-32 pb-24 text-center">
               <LogoWithSprite>
                 <h1 className="text-7xl md:text-9xl font-black mb-10 text-white brand-title">
@@ -49,10 +50,9 @@ export default function MobileHome() {
                     Role • Format • Context • Logic
                   </div>
                 </div>
-                {/* 2 columns for readability */}
-                <div className="grid grid-cols-2 gap-2 items-center">
-                  <div className="relative w-full flex flex-col items-center p-3">
-                    <div className="text-2xl font-black text-white mb-4 tracking-widest h-[2.5rem] flex items-center justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
+                  <div className="relative w-full flex flex-col items-center p-6">
+                    <div className="text-3xl font-black text-white mb-8 tracking-widest h-[3rem] flex items-center justify-center">
                       BEFORE
                     </div>
                     <ChatTypingAnimation
@@ -62,8 +62,8 @@ export default function MobileHome() {
                     />
                   </div>
 
-                  <div className="relative w-full flex flex-col items-center p-3">
-                    <div className="text-2xl font-black text-cyan-400 mb-4 tracking-widest h-[2.5rem] flex items-center justify-center drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">
+                  <div className="relative w-full flex flex-col items-center p-6">
+                    <div className="text-3xl font-black text-cyan-400 mb-8 tracking-widest h-[3rem] flex items-center justify-center drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]">
                       AFTER
                     </div>
                     <ChatTypingAnimation
@@ -421,6 +421,7 @@ export default function MobileHome() {
               </div>
             </div>
           </Section>
+        </div>
       </div>
 
       {/* Contact Modal */}
