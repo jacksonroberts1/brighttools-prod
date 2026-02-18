@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Scene3D from '@/components/Scene3D'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
@@ -9,8 +10,11 @@ import FAQItem from '@/components/FAQItem'
 import LogoWithSprite from '@/components/LogoWithSprite'
 import MouseGlow from '@/components/MouseGlow'
 import ChatTypingAnimation from '@/components/ChatTypingAnimation'
+import ContactModal from '@/components/ContactModal'
 
 export default function Home() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
   return (
     <div className="relative min-h-screen bg-black">
       {/* Mouse-reactive glow */}
@@ -64,7 +68,11 @@ export default function Home() {
               <span className="sr-only">Before and after prompt training demo videos.</span>
             </div>
             <div className="flex justify-center">
-              <Button variant="primary" size="lg">
+              <Button 
+                variant="primary" 
+                size="lg"
+                onClick={() => setIsContactModalOpen(true)}
+              >
                 Contact Us
               </Button>
             </div>
@@ -381,6 +389,12 @@ export default function Home() {
         </Section>
 
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   )
 }
