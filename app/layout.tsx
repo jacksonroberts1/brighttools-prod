@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import CursorGlow from "@/components/CursorGlow";
 import PageLoader from "@/components/PageLoader";
@@ -23,6 +24,7 @@ export default function RootLayout({
         <CustomCursor />
         <BackgroundEffects />
         {children}
+        <Analytics />
       </body>
     </html>
   );
